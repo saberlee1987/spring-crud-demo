@@ -1,0 +1,42 @@
+server:
+    port: 9000
+    tomcat:
+        accept-count: 500
+        accesslog:
+            enabled: true
+            encoding: UTF-8
+        connection-timeout: 10000
+        threads:
+            max: 1000
+            min-spare: 50
+    max-http-request-header-size: 800000
+    servlet:
+        encoding:
+            enabled: true
+            force: true
+
+spring:
+    application:
+        name: spring-crud-demo
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/test2
+        username: saber66
+        password: AdminSaber66
+        hikari:
+            connection-timeout: 30000
+            idle-timeout: 10000
+            initialization-fail-timeout: 10000
+            login-timeout: 10000
+            keepalive-time: 15000
+            schema: test2
+    jpa:
+        show-sql: true
+        properties:
+            hibernate:
+                show_sql: true
+                format_sql: true
+        hibernate:
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+            ddl-auto: none
